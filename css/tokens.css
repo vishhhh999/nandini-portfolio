@@ -1,0 +1,72 @@
+/* ============================================================
+   NANDINI BHATTACHARYA — DESIGN TOKENS
+   Direction: "Soft palette, hard cuts."
+   Rules:
+   - Accent (#2F5DA8) has ONE job: interactive elements.
+   - Radius grammar is binary: 0px frames, pill interactives.
+   - No shadows anywhere. Depth = polarity flips + hairlines.
+   ============================================================ */
+
+:root {
+  /* Canvas — blush family (light track) */
+  --blush:        #F2DCDB;
+  --blush-alt:    #EDD4D3;
+  --blush-deep:   #E4C7C6;   /* placeholder frames, fills */
+
+  /* Canvas — ink family (dark track) */
+  --ink:          #171111;
+  --ink-soft:     #241B1B;   /* panels on ink */
+
+  /* Text on blush (AA verified) */
+  --text:         #1C1414;   /* ~13.9:1 */
+  --text-2:       #5C5250;   /* ~5.8:1  */
+
+  /* Text on ink (AA verified) */
+  --text-inv:     #F2DCDB;   /* ~12.6:1 */
+  --text-inv-2:   #C4A9A8;   /* ~7.6:1  */
+
+  /* Accent — interactive elements ONLY */
+  --accent:       #2F5DA8;   /* ~4.9:1 on blush */
+  --accent-inv:   #9FBFF0;   /* ~9.9:1 on ink   */
+
+  /* Hairlines */
+  --line:         rgba(28, 20, 20, 0.16);
+  --line-inv:     rgba(242, 220, 219, 0.18);
+
+  /* Type */
+  --font-display: "Clash Display", "Arial Narrow", sans-serif;
+  --font-body:    "Satoshi", "Helvetica Neue", Arial, sans-serif;
+
+  --size-hero:    clamp(4.2rem, 15.5vw, 15rem);
+  --size-title:   clamp(2.6rem, 7vw, 5.5rem);
+  --size-stat:    clamp(2.4rem, 5vw, 4rem);
+  --size-lg:      clamp(1.25rem, 1.8vw, 1.5rem);
+  --size-body:    1.0625rem;   /* 17px */
+  --size-sm:      0.875rem;    /* 14px */
+  --size-eyebrow: 0.75rem;     /* 12px, caps, wide-tracked */
+
+  --track-caps:   0.16em;
+  --track-display:-0.02em;
+
+  /* Spacing — 4px base, multiples only */
+  --s-1: 0.5rem;   /* 8  */
+  --s-2: 1rem;     /* 16 */
+  --s-3: 1.5rem;   /* 24 */
+  --s-4: 2rem;     /* 32 */
+  --s-5: 3rem;     /* 48 */
+  --s-6: 4rem;     /* 64 */
+  --s-7: 6rem;     /* 96 */
+  --s-8: 8rem;     /* 128 */
+
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --section-pad: clamp(6rem, 12vh, 9rem);
+
+  /* Radius — binary grammar. Do not add values. */
+  --r-frame: 0;
+  --r-pill:  999px;
+
+  /* Motion */
+  --ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-micro: 200ms;
+  --dur-move:  350ms;
+}

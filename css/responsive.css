@@ -1,0 +1,45 @@
+/* ============================================================
+   RESPONSIVE
+   Mobile strategy: same identity, simpler physics.
+   Cursor and Lenis are disabled in JS below 992px / coarse
+   pointers; layout collapses here.
+   ============================================================ */
+
+@media (max-width: 991px) {
+  .about-grid,
+  .content-grid { grid-template-columns: 1fr; gap: var(--s-6); }
+
+  .tabs { position: static; }
+
+  .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .timeline-item { grid-template-columns: 1fr; gap: var(--s-1); }
+
+  .index-row {
+    grid-template-columns: 1fr;
+    gap: var(--s-1);
+  }
+  .index-desc { max-width: 52ch; }
+}
+
+@media (max-width: 767px) {
+  :root { --section-pad: clamp(4rem, 10vh, 6rem); }
+
+  .nav-links { display: none; }        /* wordmark + resume btn only */
+  .nav .btn { padding: 0.625rem 1.25rem; }
+
+  .hero { padding-bottom: var(--s-4); }
+  .hero-name { margin-left: 0; }
+  .hero-foot { flex-direction: column; align-items: flex-start; }
+
+  .band-head { flex-direction: column; gap: var(--s-1); }
+
+  .footer-grid { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 479px) {
+  .gallery { grid-template-columns: 1fr; }
+  .metrics { grid-template-columns: 1fr; }
+  .mini-metrics { gap: var(--s-4); }
+}
