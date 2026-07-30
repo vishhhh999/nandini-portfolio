@@ -43,3 +43,21 @@
   .metrics { grid-template-columns: 1fr; }
   .mini-metrics { gap: var(--s-4); }
 }
+
+/* ---- New sections ----------------------------------------- */
+
+@media (max-width: 991px) {
+  .contact-grid { grid-template-columns: 1fr; gap: var(--s-6); }
+  .stack-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ticker-track { gap: var(--s-6); animation-duration: 22s; }
+}
+
+@media (max-width: 767px) {
+  .footer-social { flex-wrap: wrap; }
+  .to-top { right: var(--s-2); bottom: var(--s-2); width: 44px; height: 44px; }
+}
+
+@media (max-width: 479px) {
+  .stack-grid { grid-template-columns: 1fr 1fr; }
+  .faq-a-inner p { padding-left: 0; }
+}

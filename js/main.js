@@ -167,3 +167,82 @@ if (!MOTION_OK) {
     });
   });
 })();
+
+/* ---- FAQ accordion ---------------------------------------- */
+
+(function initFaq() {
+  document.querySelectorAll(".faq-q").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      const panel = document.getElementById(btn.getAttribute("aria-controls"));
+      panel.classList.toggle("is-open", !open);
+    });
+  });
+})();
+
+/* ---- Contact form → pre-filled Gmail compose -------------- */
+
+(function initContactForm() {
+  const form = document.getElementById("contact-form");
+  if (!form) return;
+  const status = document.getElementById("form-status");
+  const TO = "hello@nandinib.com"; // TODO: confirm this inbox
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const msg = form.message.value.trim();
+
+    // Minimal validation with real feedback
+    let bad = null;
+    if (!name) bad = [form.name, "Add your name."];
+    else if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) bad = [form.email, "Add a valid email."];
+    else if (!msg) bad = [form.message, "Add a message."];
+
+    [form.name, form.email, form.message].forEach((f) => f.removeAttribute("aria-invalid"));
+    if (bad) {
+      bad[0].setAttribute("aria-invalid", "true");
+      status.textContent = bad[1];
+      bad[0].focus();
+      return;
+    }
+    status.textContent = "";
+
+    const su = encodeURIComponent(`Let's Connect — ${name}`);
+    const body = encodeURIComponent(`Hey Nandini,\n\n${msg}\n\n— ${name}\n${email}`);
+    const gmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${TO}&su=${su}&body=${body}`;
+
+    // Gmail compose in a new tab; mailto fallback if blocked
+    const win = window.open(gmail, "_blank", "noopener");
+    if (!win) window.location.href = `mailto:${TO}?subject=${su}&body=${body}`;
+  });
+})();
+
+/* ---- Back to top ------------------------------------------ */
+
+(function initToTop() {
+  const btn = document.getElementById("to-top");
+  if (!btn) return;
+
+  const onScroll = () =>
+    btn.classList.toggle("is-visible", window.scrollY > window.innerHeight);
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  btn.addEventListener("click", () => {
+    if (lenis) lenis.scrollTo(0);
+    else window.scrollTo({ top: 0, behavior: "smooth" });
+    const mark = document.querySelector(".nav-mark");
+    if (mark) mark.focus();
+  });
+})();
+
+/* ---- Ticker: duplicate track for a seamless loop ---------- */
+
+(function initTicker() {
+  const track = document.getElementById("ticker-track");
+  if (!track) return;
+  track.innerHTML += track.innerHTML; // second copy; keyframes end at -50%
+})();

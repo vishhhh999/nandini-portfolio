@@ -57,14 +57,32 @@ Any static server works. Opening `index.html` directly also works.
 Push to GitHub, import in Vercel, framework preset "Other", no build
 command, output directory `/`. Done.
 
+## Page structure
+
+Hero → About → Ticker (ink) → Selected Work → Experience (ink) →
+Skills → Daily App Stack → FAQ → Contact → Footer (ink).
+
+Added features: brand ticker (placeholder marks), sample metric
+numbers, FAQ accordion, contact form that opens a pre-filled Gmail
+compose (no backend, nothing stored), resume download button
+(assets/ holds a stub PDF), difference-blend cursor with x-ray
+expand, hero-name cursor-proximity lift, back-to-top button.
+
 ## TODO before launch (blocking)
 
 1. Replace all `.ph` placeholder frames with real work
    (aspect ratios are already set per format: 4:5, 9:16, 1:1, 16:9).
-2. Fill `.metric-slot` values with **verified** numbers only, with
-   account context. Delete any metric Nandini can't back up.
+2. Metric numbers currently visible are SAMPLE DATA (marked in the
+   analytics eyebrow). Replace with verified numbers, with account
+   context, before launch. Delete any metric Nandini can't back up.
 3. Resume: real company names, fill or explain the 2018–2020 gap,
    reconcile "6 yrs" with the timeline.
 4. Awards row: name the actual awards or delete the row.
 5. Add `og:image` (1200×630) and a favicon.
-6. Confirm `hello@nandinib.com` is a live inbox.
+6. Confirm `hello@nandinib.com` is a live inbox (it is also the
+   target of the contact form and the footer Gmail link — update
+   `TO` in js/main.js and the footer href together).
+7. Replace assets/Nandini-Bhattacharya-Resume.pdf with her real resume.
+8. Swap ticker placeholder marks for real brand SVGs; fill real
+   social URLs in the footer.
+9. Confirm the Daily Stack tools are actually her stack.

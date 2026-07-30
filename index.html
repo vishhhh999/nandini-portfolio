@@ -6,7 +6,6 @@
   <title>Nandini Bhattacharya — Creative Portfolio</title>
   <meta name="description" content="Nandini Bhattacharya is a creative professional working across motion design, social media management, content creation and brand strategy." />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Nandini Bhattacharya — Creative Portfolio" />
   <meta property="og:description" content="Motion design, social media management, content creation and brand strategy." />
   <meta property="og:type" content="website" />
@@ -30,8 +29,8 @@
     <div class="loader-count" id="loader-count">00</div>
   </div>
 
-  <!-- Custom cursor -->
-  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <!-- Custom cursor: white blend circle = negative/x-ray effect -->
+  <div class="cursor-blend" id="cursor-blend" aria-hidden="true"></div>
   <div class="cursor-label" id="cursor-label" aria-hidden="true"></div>
 
   <!-- Nav -->
@@ -40,12 +39,13 @@
     <nav aria-label="Primary">
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#skills">Expertise</a></li>
-        <li><a href="#content">Content</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <a class="btn" href="mailto:hello@nandinib.com">Get in touch</a>
+    <a class="btn" href="assets/Nandini-Bhattacharya-Resume.pdf" download>Resume &darr;</a>
   </header>
 
   <main id="main">
@@ -108,11 +108,157 @@
       </div>
     </section>
 
-    <!-- 3. RESUME — first ink cut -->
-    <section class="band band--ink" id="resume" aria-labelledby="resume-title">
+    <!-- 3. TICKER — first ink cut -->
+    <section class="band band--ink ticker-band" aria-label="Brands worked with">
+      <p class="eyebrow ticker-eyebrow">Worked with</p>
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track" id="ticker-track">
+          <!-- Placeholder marks. Swap each .mark for a real brand SVG. -->
+          <span class="mark"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><i>Brand One</i></span>
+          <span class="mark"><svg viewBox="0 0 40 40" width="40" height="40"><rect x="8" y="8" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" transform="rotate(45 20 20)"/></svg><i>Brand Two</i></span>
+          <span class="mark"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M20 5v30M5 20h30M9 9l22 22M31 9L9 31" stroke="currentColor" stroke-width="2.5"/></svg><i>Brand Three</i></span>
+          <span class="mark"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M20 6l12 21H8z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><i>Brand Four</i></span>
+          <span class="mark"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M6 20c4-9 10-9 14 0s10 9 14 0" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><i>Brand Five</i></span>
+          <span class="mark"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M20 4l4.7 10.6L36 16l-8 8 1.9 11.4L20 30l-9.9 5.4L12 24l-8-8 11.3-1.4z" fill="none" stroke="currentColor" stroke-width="2"/></svg><i>Brand Six</i></span>
+          <span class="mark"><svg viewBox="0 0 40 40" width="40" height="40"><circle cx="14" cy="20" r="9" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="26" cy="20" r="9" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><i>Brand Seven</i></span>
+          <span class="mark"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M12 6h16l6 14-14 14L6 20z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><i>Brand Eight</i></span>
+          <span class="mark"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M8 30V10l12 14 12-14v20" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><i>Brand Nine</i></span>
+          <span class="mark"><svg viewBox="0 0 40 40" width="40" height="40"><path d="M22 4L10 22h8l-2 14 14-20h-9z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><i>Brand Ten</i></span>
+        </div>
+      </div>
+      <span class="visually-hidden">Logos of brands Nandini has worked with. Placeholder marks for now.</span>
+    </section>
+
+    <!-- 4. SELECTED WORK -->
+    <section class="band" id="work" aria-labelledby="work-title">
       <div class="band-head">
-        <p class="eyebrow">Resume</p>
-        <h2 class="title will-reveal" id="resume-title">The path so far</h2>
+        <p class="eyebrow">Content</p>
+        <h2 class="title will-reveal" id="work-title">Selected work</h2>
+      </div>
+      <div class="content-grid">
+
+        <div class="tabs" role="tablist" aria-label="Work categories">
+          <button class="tab" id="tab-smm" role="tab" aria-selected="true" aria-controls="panel-smm">
+            Social Media Management
+          </button>
+          <button class="tab" id="tab-creation" role="tab" aria-selected="false" aria-controls="panel-creation" tabindex="-1">
+            Content Creation
+          </button>
+          <button class="tab" id="tab-strategy" role="tab" aria-selected="false" aria-controls="panel-strategy" tabindex="-1">
+            Content Strategy
+          </button>
+          <button class="tab" id="tab-campaigns" role="tab" aria-selected="false" aria-controls="panel-campaigns" tabindex="-1">
+            Campaign Management
+          </button>
+        </div>
+
+        <div class="panels">
+
+          <!-- Panel 1: SMM + analytics -->
+          <div class="panel" id="panel-smm" role="tabpanel" aria-labelledby="tab-smm" tabindex="0">
+            <p class="prose panel-desc">
+              Running accounts end to end: planning, publishing, community
+              and reporting. Real posts drop into the frames below.
+            </p>
+            <div class="gallery" data-cursor="View">
+              <figure class="ph ph--45"><figcaption class="ph-label">Instagram feed</figcaption><span class="ph-ratio">4:5</span></figure>
+              <figure class="ph ph--916"><figcaption class="ph-label">Reels</figcaption><span class="ph-ratio">9:16</span></figure>
+              <figure class="ph ph--45"><figcaption class="ph-label">Carousel posts</figcaption><span class="ph-ratio">4:5</span></figure>
+              <figure class="ph ph--916"><figcaption class="ph-label">Stories</figcaption><span class="ph-ratio">9:16</span></figure>
+              <figure class="ph ph--11"><figcaption class="ph-label">Content calendar</figcaption><span class="ph-ratio">1:1</span></figure>
+              <figure class="ph ph--11"><figcaption class="ph-label">Grid layout</figcaption><span class="ph-ratio">1:1</span></figure>
+            </div>
+            <div class="analytics">
+              <p class="eyebrow">Post analytics · sample data, swap with verified numbers</p>
+              <dl class="metrics">
+                <div><dt class="metric-label">Reach</dt><dd class="metric-num">2.4M</dd></div>
+                <div><dt class="metric-label">Impressions</dt><dd class="metric-num">12.8M</dd></div>
+                <div><dt class="metric-label">Engagement rate</dt><dd class="metric-num">8.5%</dd></div>
+                <div><dt class="metric-label">Saves &amp; shares</dt><dd class="metric-num">145K</dd></div>
+                <div><dt class="metric-label">Profile visits</dt><dd class="metric-num">320K</dd></div>
+                <div><dt class="metric-label">Follower growth</dt><dd class="metric-num">+85K</dd></div>
+                <div><dt class="metric-label">Avg watch time</dt><dd class="metric-num">18s</dd></div>
+                <div><dt class="metric-label">Avg story views</dt><dd class="metric-num">42K</dd></div>
+              </dl>
+              <div class="chart-wrap">
+                <canvas id="growth-chart" aria-hidden="true"></canvas>
+                <span class="visually-hidden">Account reach and growth chart. Sample data.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2 -->
+          <div class="panel" id="panel-creation" role="tabpanel" aria-labelledby="tab-creation" tabindex="0" hidden>
+            <p class="prose panel-desc">
+              Graphics, edits and assets made to be posted, not just
+              admired in a folder.
+            </p>
+            <div class="gallery" data-cursor="View">
+              <figure class="ph ph--45"><figcaption class="ph-label">Graphics</figcaption><span class="ph-ratio">4:5</span></figure>
+              <figure class="ph ph--11"><figcaption class="ph-label">Social posts</figcaption><span class="ph-ratio">1:1</span></figure>
+              <figure class="ph ph--916"><figcaption class="ph-label">Reels</figcaption><span class="ph-ratio">9:16</span></figure>
+              <figure class="ph ph--169"><figcaption class="ph-label">Videos</figcaption><span class="ph-ratio">16:9</span></figure>
+              <figure class="ph ph--11"><figcaption class="ph-label">Creative assets</figcaption><span class="ph-ratio">1:1</span></figure>
+              <figure class="ph ph--45"><figcaption class="ph-label">Visual examples</figcaption><span class="ph-ratio">4:5</span></figure>
+            </div>
+            <div class="mini-metrics">
+              <div class="mini-metric"><span class="metric-label">Assets produced</span><span class="metric-num">500+</span></div>
+              <div class="mini-metric"><span class="metric-label">Total views</span><span class="metric-num">4.8M</span></div>
+              <div class="mini-metric"><span class="metric-label">Brand partners</span><span class="metric-num">28</span></div>
+            </div>
+          </div>
+
+          <!-- Panel 3 -->
+          <div class="panel" id="panel-strategy" role="tabpanel" aria-labelledby="tab-strategy" tabindex="0" hidden>
+            <p class="prose panel-desc">
+              The thinking layer: pillars, planning and positioning that
+              give the content a reason to exist.
+            </p>
+            <div class="gallery" data-cursor="View">
+              <figure class="ph ph--169"><figcaption class="ph-label">Strategy overview</figcaption><span class="ph-ratio">16:9</span></figure>
+              <figure class="ph ph--11"><figcaption class="ph-label">Content planning</figcaption><span class="ph-ratio">1:1</span></figure>
+              <figure class="ph ph--45"><figcaption class="ph-label">Content pillars</figcaption><span class="ph-ratio">4:5</span></figure>
+              <figure class="ph ph--169"><figcaption class="ph-label">Campaign examples</figcaption><span class="ph-ratio">16:9</span></figure>
+              <figure class="ph ph--11"><figcaption class="ph-label">Results</figcaption><span class="ph-ratio">1:1</span></figure>
+              <figure class="ph ph--45"><figcaption class="ph-label">Documentation</figcaption><span class="ph-ratio">4:5</span></figure>
+            </div>
+            <div class="mini-metrics">
+              <div class="mini-metric"><span class="metric-label">Client retention</span><span class="metric-num">96%</span></div>
+              <div class="mini-metric"><span class="metric-label">Average ROI</span><span class="metric-num">2.5x</span></div>
+              <div class="mini-metric"><span class="metric-label">Strategies shipped</span><span class="metric-num">40+</span></div>
+            </div>
+          </div>
+
+          <!-- Panel 4 -->
+          <div class="panel" id="panel-campaigns" role="tabpanel" aria-labelledby="tab-campaigns" tabindex="0" hidden>
+            <p class="prose panel-desc">
+              Campaigns from brief to wrap report: deliverables, timelines,
+              ad creative and the outcomes they produced.
+            </p>
+            <div class="gallery" data-cursor="View">
+              <figure class="ph ph--169"><figcaption class="ph-label">Campaign overview</figcaption><span class="ph-ratio">16:9</span></figure>
+              <figure class="ph ph--11"><figcaption class="ph-label">Deliverables</figcaption><span class="ph-ratio">1:1</span></figure>
+              <figure class="ph ph--45"><figcaption class="ph-label">Execution process</figcaption><span class="ph-ratio">4:5</span></figure>
+              <figure class="ph ph--169"><figcaption class="ph-label">Campaign timeline</figcaption><span class="ph-ratio">16:9</span></figure>
+              <figure class="ph ph--916"><figcaption class="ph-label">Ad creatives</figcaption><span class="ph-ratio">9:16</span></figure>
+              <figure class="ph ph--11"><figcaption class="ph-label">Final outcomes</figcaption><span class="ph-ratio">1:1</span></figure>
+            </div>
+            <div class="mini-metrics">
+              <div class="mini-metric"><span class="metric-label">Campaigns run</span><span class="metric-num">60+</span></div>
+              <div class="mini-metric"><span class="metric-label">Combined reach</span><span class="metric-num">18M</span></div>
+              <div class="mini-metric"><span class="metric-label">Best ROI</span><span class="metric-num">720%</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. WORK EXPERIENCE — second ink cut -->
+    <section class="band band--ink" id="experience" aria-labelledby="experience-title">
+      <div class="band-head">
+        <p class="eyebrow">Experience</p>
+        <h2 class="title will-reveal" id="experience-title">The path so far</h2>
       </div>
       <ol class="timeline">
         <li class="timeline-item">
@@ -144,11 +290,11 @@
         </li>
       </ol>
       <div class="resume-cta">
-        <a class="btn" href="#content">See the work</a>
+        <a class="btn" href="assets/Nandini-Bhattacharya-Resume.pdf" download>Download resume</a>
       </div>
     </section>
 
-    <!-- 4. SKILLS — editorial index -->
+    <!-- 6. SKILLS -->
     <section class="band" id="skills" aria-labelledby="skills-title">
       <div class="band-head">
         <p class="eyebrow">Expertise</p>
@@ -188,147 +334,127 @@
       </ul>
     </section>
 
-    <!-- 5. CONTENT — tabbed work -->
-    <section class="band band--alt" id="content" aria-labelledby="content-title">
+    <!-- 7. DAILY APP STACK -->
+    <section class="band band--alt" id="stack" aria-labelledby="stack-title">
       <div class="band-head">
-        <p class="eyebrow">Content</p>
-        <h2 class="title will-reveal" id="content-title">Selected work</h2>
+        <p class="eyebrow">Daily stack</p>
+        <h2 class="title will-reveal" id="stack-title">Tools I live in</h2>
       </div>
-      <div class="content-grid">
+      <ul class="stack-grid" role="list">
+        <!-- TODO: confirm Nandini's actual stack; swap glyphs for real app marks if desired -->
+        <li class="stack-tile"><svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true"><circle cx="20" cy="20" r="12" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><span>Figma</span></li>
+        <li class="stack-tile"><svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true"><rect x="9" y="9" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><span>After Effects</span></li>
+        <li class="stack-tile"><svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true"><path d="M20 7l11 19H9z" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><span>Premiere Pro</span></li>
+        <li class="stack-tile"><svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true"><path d="M10 10l20 20M30 10L10 30" stroke="currentColor" stroke-width="2.5"/></svg><span>Photoshop</span></li>
+        <li class="stack-tile"><svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true"><path d="M8 20h24M20 8v24" stroke="currentColor" stroke-width="2.5"/></svg><span>Illustrator</span></li>
+        <li class="stack-tile"><svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true"><circle cx="15" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="25" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><span>CapCut</span></li>
+        <li class="stack-tile"><svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true"><path d="M10 28V12l10 12 10-12v16" fill="none" stroke="currentColor" stroke-width="2.5"/></svg><span>Notion</span></li>
+        <li class="stack-tile"><svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true"><path d="M20 6l4 8.6L33 16l-6.5 6.3L28 32l-8-4.4L12 32l1.5-9.7L7 16l9-1.4z" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Meta Business Suite</span></li>
+      </ul>
+    </section>
 
-        <div class="tabs" role="tablist" aria-label="Work categories">
-          <button class="tab" id="tab-smm" role="tab" aria-selected="true" aria-controls="panel-smm">
-            Social Media Management
-          </button>
-          <button class="tab" id="tab-creation" role="tab" aria-selected="false" aria-controls="panel-creation" tabindex="-1">
-            Content Creation
-          </button>
-          <button class="tab" id="tab-strategy" role="tab" aria-selected="false" aria-controls="panel-strategy" tabindex="-1">
-            Content Strategy
-          </button>
-          <button class="tab" id="tab-campaigns" role="tab" aria-selected="false" aria-controls="panel-campaigns" tabindex="-1">
-            Campaign Management
-          </button>
+    <!-- 8. FAQ -->
+    <section class="band" id="faq" aria-labelledby="faq-title">
+      <div class="band-head">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="title will-reveal" id="faq-title">Before you ask</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a1" id="faq-q1"><span class="faq-n">01</span>What does working together look like?</button></h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div class="faq-a-inner"><p>A short call to align on goals, then a scoped plan with deliverables and timeline. You always know what ships and when.</p></div></div>
         </div>
-
-        <div class="panels">
-
-          <!-- Panel 1: SMM + analytics -->
-          <div class="panel" id="panel-smm" role="tabpanel" aria-labelledby="tab-smm" tabindex="0">
-            <p class="prose panel-desc">
-              Running accounts end to end: planning, publishing, community
-              and reporting. Real posts drop into the frames below.
-            </p>
-            <div class="gallery" data-cursor="View">
-              <figure class="ph ph--45"><figcaption class="ph-label">Instagram feed</figcaption><span class="ph-ratio">4:5</span></figure>
-              <figure class="ph ph--916"><figcaption class="ph-label">Reels</figcaption><span class="ph-ratio">9:16</span></figure>
-              <figure class="ph ph--45"><figcaption class="ph-label">Carousel posts</figcaption><span class="ph-ratio">4:5</span></figure>
-              <figure class="ph ph--916"><figcaption class="ph-label">Stories</figcaption><span class="ph-ratio">9:16</span></figure>
-              <figure class="ph ph--11"><figcaption class="ph-label">Content calendar</figcaption><span class="ph-ratio">1:1</span></figure>
-              <figure class="ph ph--11"><figcaption class="ph-label">Grid layout</figcaption><span class="ph-ratio">1:1</span></figure>
-            </div>
-            <div class="analytics">
-              <p class="eyebrow">Post analytics — verified numbers pending</p>
-              <dl class="metrics">
-                <div><dt class="metric-label">Reach</dt><dd class="metric-slot" aria-label="Value pending"></dd></div>
-                <div><dt class="metric-label">Impressions</dt><dd class="metric-slot" aria-label="Value pending"></dd></div>
-                <div><dt class="metric-label">Engagement rate</dt><dd class="metric-slot" aria-label="Value pending"></dd></div>
-                <div><dt class="metric-label">Saves &amp; shares</dt><dd class="metric-slot" aria-label="Value pending"></dd></div>
-                <div><dt class="metric-label">Profile visits</dt><dd class="metric-slot" aria-label="Value pending"></dd></div>
-                <div><dt class="metric-label">Follower growth</dt><dd class="metric-slot" aria-label="Value pending"></dd></div>
-                <div><dt class="metric-label">Avg watch time</dt><dd class="metric-slot" aria-label="Value pending"></dd></div>
-                <div><dt class="metric-label">Avg story views</dt><dd class="metric-slot" aria-label="Value pending"></dd></div>
-              </dl>
-              <div class="chart-wrap">
-                <canvas id="growth-chart" aria-hidden="true"></canvas>
-                <span class="visually-hidden">Account reach and growth chart. Data pending.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Panel 2 -->
-          <div class="panel" id="panel-creation" role="tabpanel" aria-labelledby="tab-creation" tabindex="0" hidden>
-            <p class="prose panel-desc">
-              Graphics, edits and assets made to be posted, not just
-              admired in a folder.
-            </p>
-            <div class="gallery" data-cursor="View">
-              <figure class="ph ph--45"><figcaption class="ph-label">Graphics</figcaption><span class="ph-ratio">4:5</span></figure>
-              <figure class="ph ph--11"><figcaption class="ph-label">Social posts</figcaption><span class="ph-ratio">1:1</span></figure>
-              <figure class="ph ph--916"><figcaption class="ph-label">Reels</figcaption><span class="ph-ratio">9:16</span></figure>
-              <figure class="ph ph--169"><figcaption class="ph-label">Videos</figcaption><span class="ph-ratio">16:9</span></figure>
-              <figure class="ph ph--11"><figcaption class="ph-label">Creative assets</figcaption><span class="ph-ratio">1:1</span></figure>
-              <figure class="ph ph--45"><figcaption class="ph-label">Visual examples</figcaption><span class="ph-ratio">4:5</span></figure>
-            </div>
-            <div class="mini-metrics">
-              <div class="mini-metric"><span class="metric-label">Assets produced</span><span class="metric-slot" aria-label="Value pending"></span></div>
-              <div class="mini-metric"><span class="metric-label">Total views</span><span class="metric-slot" aria-label="Value pending"></span></div>
-              <div class="mini-metric"><span class="metric-label">Brand partners</span><span class="metric-slot" aria-label="Value pending"></span></div>
-            </div>
-          </div>
-
-          <!-- Panel 3 -->
-          <div class="panel" id="panel-strategy" role="tabpanel" aria-labelledby="tab-strategy" tabindex="0" hidden>
-            <p class="prose panel-desc">
-              The thinking layer: pillars, planning and positioning that
-              give the content a reason to exist.
-            </p>
-            <div class="gallery" data-cursor="View">
-              <figure class="ph ph--169"><figcaption class="ph-label">Strategy overview</figcaption><span class="ph-ratio">16:9</span></figure>
-              <figure class="ph ph--11"><figcaption class="ph-label">Content planning</figcaption><span class="ph-ratio">1:1</span></figure>
-              <figure class="ph ph--45"><figcaption class="ph-label">Content pillars</figcaption><span class="ph-ratio">4:5</span></figure>
-              <figure class="ph ph--169"><figcaption class="ph-label">Campaign examples</figcaption><span class="ph-ratio">16:9</span></figure>
-              <figure class="ph ph--11"><figcaption class="ph-label">Results</figcaption><span class="ph-ratio">1:1</span></figure>
-              <figure class="ph ph--45"><figcaption class="ph-label">Documentation</figcaption><span class="ph-ratio">4:5</span></figure>
-            </div>
-            <div class="mini-metrics">
-              <div class="mini-metric"><span class="metric-label">Client retention</span><span class="metric-slot" aria-label="Value pending"></span></div>
-              <div class="mini-metric"><span class="metric-label">Average ROI</span><span class="metric-slot" aria-label="Value pending"></span></div>
-              <div class="mini-metric"><span class="metric-label">Strategies shipped</span><span class="metric-slot" aria-label="Value pending"></span></div>
-            </div>
-          </div>
-
-          <!-- Panel 4 -->
-          <div class="panel" id="panel-campaigns" role="tabpanel" aria-labelledby="tab-campaigns" tabindex="0" hidden>
-            <p class="prose panel-desc">
-              Campaigns from brief to wrap report: deliverables, timelines,
-              ad creative and the outcomes they produced.
-            </p>
-            <div class="gallery" data-cursor="View">
-              <figure class="ph ph--169"><figcaption class="ph-label">Campaign overview</figcaption><span class="ph-ratio">16:9</span></figure>
-              <figure class="ph ph--11"><figcaption class="ph-label">Deliverables</figcaption><span class="ph-ratio">1:1</span></figure>
-              <figure class="ph ph--45"><figcaption class="ph-label">Execution process</figcaption><span class="ph-ratio">4:5</span></figure>
-              <figure class="ph ph--169"><figcaption class="ph-label">Campaign timeline</figcaption><span class="ph-ratio">16:9</span></figure>
-              <figure class="ph ph--916"><figcaption class="ph-label">Ad creatives</figcaption><span class="ph-ratio">9:16</span></figure>
-              <figure class="ph ph--11"><figcaption class="ph-label">Final outcomes</figcaption><span class="ph-ratio">1:1</span></figure>
-            </div>
-            <div class="mini-metrics">
-              <div class="mini-metric"><span class="metric-label">Campaigns run</span><span class="metric-slot" aria-label="Value pending"></span></div>
-              <div class="mini-metric"><span class="metric-label">Combined reach</span><span class="metric-slot" aria-label="Value pending"></span></div>
-              <div class="mini-metric"><span class="metric-label">Best ROI</span><span class="metric-slot" aria-label="Value pending"></span></div>
-            </div>
-          </div>
-
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span class="faq-n">02</span>What services do you cover?</button></h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div class="faq-a-inner"><p>Social media management, content creation, content strategy and campaign management, plus the motion and design work inside all of them.</p></div></div>
         </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span class="faq-n">03</span>How is pricing structured?</button></h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div class="faq-a-inner"><p>Project-based for one-off work, monthly retainers for ongoing management. Scope is agreed before anything starts.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span class="faq-n">04</span>Do you take one-off projects?</button></h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div class="faq-a-inner"><p>Yes. A single campaign or asset pack is a fine way to start; most retainers begin that way.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span class="faq-n">05</span>How do we measure success?</button></h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div class="faq-a-inner"><p>Metrics agreed upfront: reach, engagement, growth or conversions depending on the goal, reported monthly.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button class="faq-q" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span class="faq-n">06</span>What do you need from me to start?</button></h3>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div class="faq-a-inner"><p>Access to your accounts, your brand assets if they exist, and one honest conversation about where you want to be.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CONTACT -->
+    <section class="band band--alt" id="contact" aria-labelledby="contact-title">
+      <div class="contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2 class="title will-reveal" id="contact-title">Let's talk</h2>
+          <p class="prose contact-blurb">
+            Got a brand, account or campaign that needs momentum?
+            Send a message and I'll get back to you fast.
+          </p>
+          <ul class="contact-points" role="list">
+            <li>Open to global collaborations</li>
+            <li>Quick response times</li>
+            <li>Freelance and contract friendly</li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="field">
+            <label for="cf-name" class="visually-hidden">Name</label>
+            <input id="cf-name" name="name" type="text" placeholder="Name*" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="cf-email" class="visually-hidden">Email</label>
+            <input id="cf-email" name="email" type="email" placeholder="Email*" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="cf-msg" class="visually-hidden">Message</label>
+            <textarea id="cf-msg" name="message" rows="6" placeholder="Message*" required></textarea>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <button class="btn btn--wide" type="submit">Send message</button>
+          <p class="form-note">Opens a pre-filled email in Gmail. No data is stored.</p>
+        </form>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER — closing ink cut -->
-  <footer class="footer" id="contact">
-    <p class="footer-name">Let's make<br />something loud.</p>
-    <a class="footer-mail" href="mailto:hello@nandinib.com" data-cursor="Say hi">hello@nandinib.com</a>
+  <!-- 10. FOOTER — closing ink cut -->
+  <footer class="footer">
+    <p class="eyebrow">Stay connected</p>
+    <p class="footer-name">
+      <a class="footer-reach" id="footer-reach" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=hello@nandinib.com&amp;su=Let%27s%20Connect&amp;body=Hey%20Nandini%2C%20I%20just%20checked%20out%20your%20portfolio%20and%20I%27d%20love%20to%20talk." target="_blank" rel="noopener" data-cursor="Say hi">Click here to<br />reach out to me</a>
+    </p>
+    <p class="footer-blurb">
+      From feeds to full campaigns, I bring ideas to life with clarity
+      and intent. Reach out anytime: collaborations, freelance projects,
+      or just to say hi.
+    </p>
+    <ul class="footer-social" role="list">
+      <li><a href="#" data-cursor="Open">Instagram</a></li><!-- TODO: real URLs -->
+      <li><a href="#" data-cursor="Open">Behance</a></li>
+      <li><a href="#" data-cursor="Open">LinkedIn</a></li>
+    </ul>
     <div class="footer-grid">
       <ul class="footer-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#resume">Resume</a></li>
-        <li><a href="#skills">Expertise</a></li>
-        <li><a href="#content">Content</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <p class="footer-copy">© 2026 Nandini Bhattacharya</p>
     </div>
   </footer>
+
+  <!-- Back to top -->
+  <button class="to-top" id="to-top" aria-label="Back to top">&uarr;</button>
 
   <!-- Libraries -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

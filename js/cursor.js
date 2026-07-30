@@ -1,29 +1,29 @@
 /* ============================================================
-   CURSOR — accent dot + editorial label
-   Desktop fine pointers only. Never replaces the native
-   cursor; it annotates it.
+   CURSOR — white difference-blend circle + editorial label
+   Desktop fine pointers only. The blend circle inverts what
+   sits under it (x-ray effect) and expands over interactives.
    ============================================================ */
 
 (function initCursor() {
   const fine = window.matchMedia("(pointer: fine)").matches;
   if (!fine || typeof MOTION_OK === "undefined" || !MOTION_OK) return;
 
-  const dot = document.getElementById("cursor-dot");
+  const blend = document.getElementById("cursor-blend");
   const label = document.getElementById("cursor-label");
-  if (!dot || !label) return;
+  if (!blend || !label) return;
 
-  const dotX = gsap.quickTo(dot, "x", { duration: 0.12, ease: "power3.out" });
-  const dotY = gsap.quickTo(dot, "y", { duration: 0.12, ease: "power3.out" });
-  const labX = gsap.quickTo(label, "x", { duration: 0.35, ease: "power3.out" });
-  const labY = gsap.quickTo(label, "y", { duration: 0.35, ease: "power3.out" });
+  const bX = gsap.quickTo(blend, "x", { duration: 0.12, ease: "power3.out" });
+  const bY = gsap.quickTo(blend, "y", { duration: 0.12, ease: "power3.out" });
+  const lX = gsap.quickTo(label, "x", { duration: 0.35, ease: "power3.out" });
+  const lY = gsap.quickTo(label, "y", { duration: 0.35, ease: "power3.out" });
 
   window.addEventListener(
     "pointermove",
     (e) => {
-      dotX(e.clientX);
-      dotY(e.clientY);
-      labX(e.clientX);
-      labY(e.clientY);
+      bX(e.clientX);
+      bY(e.clientY);
+      lX(e.clientX);
+      lY(e.clientY);
     },
     { passive: true }
   );
@@ -37,9 +37,11 @@
     el.addEventListener("pointerleave", () => label.classList.remove("is-on"));
   });
 
-  // Dot grows over links and buttons
-  document.querySelectorAll("a, button").forEach((el) => {
-    el.addEventListener("pointerenter", () => gsap.to(dot, { scale: 2.5, duration: 0.2 }));
-    el.addEventListener("pointerleave", () => gsap.to(dot, { scale: 1, duration: 0.2 }));
+  // X-ray expand over interactive elements
+  const grow = () => gsap.to(blend, { scale: 4.5, duration: 0.25, ease: "power3.out" });
+  const shrink = () => gsap.to(blend, { scale: 1, duration: 0.25, ease: "power3.out" });
+  document.querySelectorAll("a, button, [role='tab']").forEach((el) => {
+    el.addEventListener("pointerenter", grow);
+    el.addEventListener("pointerleave", shrink);
   });
 })();
