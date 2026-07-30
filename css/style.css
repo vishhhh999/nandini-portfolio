@@ -5,10 +5,16 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-  scroll-behavior: smooth;
-  /* Custom scrollbar (Firefox) — native function preserved */
+  /* NOTE: no scroll-behavior:smooth here. Lenis writes scrollTop
+     every frame; CSS smooth-scrolling re-animates each write and
+     the two easings compound into heavy lag. Native smooth is
+     enabled only where Lenis never runs (coarse pointers). */
   scrollbar-width: thin;
   scrollbar-color: var(--ink) var(--blush);
+}
+
+@media (pointer: coarse) {
+  html { scroll-behavior: smooth; }
 }
 
 /* Custom scrollbar (WebKit) */

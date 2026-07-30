@@ -40,37 +40,31 @@
     );
   });
 
-  // Section reveals — fade + rise, never scale
-  gsap.utils.toArray(".band .will-reveal").forEach((el) => {
+  // Section reveals — batched, fire once, then self-destruct.
+  // One batch observer instead of one ScrollTrigger per element:
+  // this is the difference between ~6 triggers and ~45.
+  const revealBatch = (targets) =>
     gsap.fromTo(
-      el,
-      { opacity: 0, y: 24 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.7,
-        ease: "power3.out",
-        scrollTrigger: { trigger: el, start: "top 85%" },
-      }
+      targets,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, stagger: 0.06, ease: "power3.out", overwrite: true }
     );
+
+  ScrollTrigger.batch(".band .will-reveal", {
+    start: "top 85%",
+    once: true,
+    onEnter: revealBatch,
   });
 
-  // Index rows + timeline items stagger in
-  [".index-row", ".timeline-item", ".ph"].forEach((sel) => {
-    gsap.utils.toArray(sel).forEach((el, i) => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.5,
-          delay: (i % 6) * 0.05,
-          ease: "power2.out",
-          scrollTrigger: { trigger: el, start: "top 90%" },
-        }
-      );
-    });
+  // Rows, timeline items and the initially-visible gallery.
+  // Hidden tab panels are excluded: their frames animate when
+  // the tab opens (see main.js), not via scroll triggers that
+  // would compute positions for hidden elements.
+  gsap.set(".index-row, .timeline-item, .panel:not([hidden]) .ph", { opacity: 0, y: 20 });
+  ScrollTrigger.batch(".index-row, .timeline-item, .panel:not([hidden]) .ph", {
+    start: "top 90%",
+    once: true,
+    onEnter: revealBatch,
   });
 
   // Stat counters

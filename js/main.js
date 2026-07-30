@@ -134,6 +134,12 @@ if (!MOTION_OK) {
             { opacity: 0, y: 16 },
             { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }
           );
+          gsap.fromTo(
+            panel.querySelectorAll(".ph"),
+            { opacity: 0, y: 16 },
+            { opacity: 1, y: 0, duration: 0.4, stagger: 0.04, ease: "power2.out", overwrite: true }
+          );
+          if (window.ScrollTrigger) ScrollTrigger.refresh();
         }
         if (panel.querySelector("#growth-chart")) {
           document.dispatchEvent(new CustomEvent("chart:draw"));

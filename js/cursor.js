@@ -17,12 +17,16 @@
   const labX = gsap.quickTo(label, "x", { duration: 0.35, ease: "power3.out" });
   const labY = gsap.quickTo(label, "y", { duration: 0.35, ease: "power3.out" });
 
-  window.addEventListener("pointermove", (e) => {
-    dotX(e.clientX);
-    dotY(e.clientY);
-    labX(e.clientX);
-    labY(e.clientY);
-  });
+  window.addEventListener(
+    "pointermove",
+    (e) => {
+      dotX(e.clientX);
+      dotY(e.clientY);
+      labX(e.clientX);
+      labY(e.clientY);
+    },
+    { passive: true }
+  );
 
   // Label states from data-cursor attributes
   document.querySelectorAll("[data-cursor]").forEach((el) => {
